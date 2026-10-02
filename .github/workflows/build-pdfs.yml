@@ -1,0 +1,38 @@
+name: Build CV PDFs
+
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - '_data/*.csv'
+      - 'scripts/build.js'
+      - 'index.html'
+      - 'assets/css/**'
+      - 'scripts/render-pdfs.js'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  pdfs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install
+      - run: npm run build
+      - run: npm run pdfs
+      - name: Commit generated PDFs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/pdfs/*.pdf index.html cv outreach
+          if git diff --staged --quiet; then
+            echo "No PDF changes."
+          else
+            git commit -m "chore: rebuild pages and PDFs [skip ci]"
+            git push
+          fi

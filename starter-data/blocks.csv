@@ -1,0 +1,7 @@
+id,role,org,meta,link,sub,bullets
+job_current,Your Job Title,Employer,2022–Present,,"One line of context: what the org does, or the scale you worked at.","A bullet naming what you built or ran, with a number in it where one exists | A second bullet about scope or ownership, not duties | A third about an outcome someone else would recognise as good"
+job_previous,Earlier Job Title,Earlier Employer,2018–2022,,,"What you did that still matters to the jobs you are applying for now | Keep two or three bullets; older roles earn less space"
+project_one,Project Name,Open source,2021–Present,https://github.com/yourhandle/project-two,"One line on what it is and who uses it.","How it is built, and the notable technical decision | Scale, longevity, or adoption — anything true and checkable"
+degree_phd,Ph.D. in Your Field,University Name,2020,,"Specialization: your area. Thesis: “Your Thesis Title.”",
+degree_ba,B.A. in Your Field,College Name,2014,,Honors or distinction if any,
+publication,“Your Paper Title”,"<em>Journal Name</em>, vol. 00",2019 · pp. 1–20,,"<a href=""https://example.com/your-paper"">Publisher</a>",

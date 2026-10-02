@@ -1,0 +1,13 @@
+{
+  "name": "jordan-watkins-cv",
+  "private": true,
+  "description": "Static CV site + automated PDF export",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "pdfs": "node scripts/render-pdfs.js",
+    "reset-content": "node scripts/reset-content.js"
+  },
+  "devDependencies": {
+    "puppeteer": "^23.0.0"
+  }
+}

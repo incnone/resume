@@ -1,0 +1,7 @@
+field,value
+subject,"Short subject line naming your strongest credential"
+body_1,"Hi {{NAME}},"
+body_2,"One or two sentences on who you are and the most relevant thing you have done. Concrete and checkable."
+body_3,"I am reaching out because {{WHY THEM — one specific, honest sentence about their work}}. If you are looking for help with {{WHAT YOU DO}}, I would be glad to talk."
+body_4,"A short CV is here: {{LINK}}."
+body_5,"Thanks for reading,<br>Your Name"

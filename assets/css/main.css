@@ -1,0 +1,210 @@
+/* ==========================================================================
+   Jordan Watkins — CV site. Layer on top of the Modernist design system.
+   Link order:  modernist.css  →  main.css
+   Every color / space / font below resolves to a Modernist token.
+   --------------------------------------------------------------------------
+   ACCENT: one switch. Modernist ships mono red (--color-accent #ec3013).
+   To use navy instead, change --cv-accent / --cv-accent-deep below.
+   ========================================================================== */
+:root{
+  /* Retheme the design-system accent ramp to navy. Overriding the DS tokens
+     themselves (not just our own aliases) so DS components — .btn-primary and
+     anything added later — pick the navy up too. */
+  --color-accent:#1f4e79;
+  --color-accent-700:#16385a;
+  --color-accent-100:#e7eef5;
+
+  --cv-accent:var(--color-accent);
+  --cv-accent-deep:var(--color-accent-700);
+  --cv-accent-tint:var(--color-accent-100);
+  --cv-paper:#ffffff;                       /* the sheet             */
+  --cv-muted: color-mix(in srgb, var(--color-text) 72%, transparent); /* AA at small sizes */
+  --cv-faint: color-mix(in srgb, var(--color-text) 55%, transparent); /* large/secondary only */
+  --cv-hair: color-mix(in srgb, var(--color-text) 18%, transparent);
+  --maxw:820px;
+}
+body{font-size:15px;line-height:1.5}
+a{color:var(--cv-accent-deep);text-decoration:none;border-bottom:1px solid var(--cv-hair)}
+a:hover{color:var(--cv-accent);border-bottom-color:var(--cv-accent)}
+ul{margin:var(--space-1) 0 0;padding:0 0 0 1.05em}
+li{margin:2px 0;padding-left:2px}
+li::marker{color:var(--cv-faint)}
+.small{font-size:.82rem}
+.muted{color:var(--cv-muted)}
+
+/* ─────────────── shared résumé sheet ─────────────── */
+.sheet{max-width:var(--maxw);margin:0 auto;background:var(--cv-paper);padding:56px 60px 64px}
+.sheet-wrap{padding:var(--space-6) var(--space-4) 60px}
+.doc-head{border-bottom:2px solid var(--color-divider);padding-bottom:var(--space-4);margin-bottom:var(--space-6)}
+.doc-name{font-size:34px;letter-spacing:-0.02em;margin:0}
+.doc-tagline{margin:6px 0 0;font-size:15px;font-weight:600;color:var(--cv-accent-deep)}
+.doc-contact{margin:var(--space-3) 0 0;display:flex;flex-wrap:wrap;gap:4px var(--space-3);font-size:12.5px;color:var(--cv-muted)}
+.doc-contact a{color:var(--cv-muted);border:0}
+.doc-contact a:hover{color:var(--cv-accent)}
+.doc-contact .sep{color:var(--cv-hair)}
+.doc-summary{font-size:14px;margin:0 0 var(--space-6)}
+
+.section{margin-bottom:var(--space-6)}
+.section > h2{
+  font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--color-text);padding-bottom:var(--space-1);margin:0 0 var(--space-3);
+  border-bottom:2px solid var(--color-divider);
+}
+.entry{margin-bottom:var(--space-4);break-inside:avoid}
+.entry:last-child{margin-bottom:0}
+.entry-head{display:flex;justify-content:space-between;gap:var(--space-4);align-items:baseline}
+.entry-role{font-family:var(--font-heading);font-size:15px;font-weight:800}
+.entry-org{font-weight:600;color:var(--cv-accent-deep)}
+.entry-meta{font-size:12px;color:var(--cv-muted);white-space:nowrap;text-align:right;flex:none}
+.entry-sub{font-size:13px;color:var(--cv-muted);margin:2px 0}
+.entry ul{font-size:13.5px}
+
+.kv{display:grid;grid-template-columns:auto 1fr;gap:var(--space-1) var(--space-4);font-size:13.5px}
+.kv dt{font-family:var(--font-heading);font-weight:800}
+.kv dd{margin:0}
+
+.tag-row{display:flex;flex-wrap:wrap;gap:var(--space-1)}
+.tag{font-size:11.5px;font-weight:600;color:var(--color-text);border:1px solid var(--cv-hair);padding:2px var(--space-2);background:var(--color-neutral-100)}
+
+/* ─────────────── screen-only toolbar ─────────────── */
+.toolbar{
+  position:sticky;top:0;z-index:20;background:var(--color-text);
+  display:flex;gap:var(--space-4);align-items:center;justify-content:space-between;
+  padding:var(--space-2) var(--space-4);font-size:12.5px;
+}
+.toolbar a{color:var(--color-bg);border:0;opacity:.8}
+.toolbar a:hover{opacity:1;color:var(--color-bg)}
+.toolbar .btn-primary{color:#fff}
+
+/* ─────────────── one-page site ─────────────── */
+.site-header{max-width:var(--maxw);margin:0 auto;padding:64px var(--space-6) 0}
+.site-name{font-size:44px;letter-spacing:-0.02em;margin:0}
+.site-tagline{margin:var(--space-2) 0 0;font-size:17px;font-weight:600;color:var(--cv-accent-deep);max-width:40ch}
+.site-contact{margin:var(--space-4) 0 0;display:flex;flex-wrap:wrap;gap:var(--space-1) var(--space-4);font-size:13.5px;color:var(--cv-muted)}
+.site-contact a{color:var(--cv-muted);border:0}
+.site-contact a:hover{color:var(--cv-accent)}
+.header-jump{margin:var(--space-4) 0 0}
+.header-jump a{font-size:12.5px;font-weight:700;letter-spacing:.02em;color:var(--cv-accent-deep);border-bottom:2px solid var(--cv-accent-deep);padding-bottom:2px}
+.header-jump a:hover{color:var(--cv-accent);border-bottom-color:var(--cv-accent)}
+.rule-strong{max-width:var(--maxw);margin:var(--space-8) auto 0;height:2px;background:var(--color-divider)}
+.site-main{max-width:var(--maxw);margin:0 auto;padding:0 var(--space-6) 80px}
+.block{padding:var(--space-8) 0;border-bottom:1px solid var(--cv-hair)}
+.block:last-child{border-bottom:0}
+.block > h2{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin:0 0 var(--space-4)}
+.lede{font-size:18px;line-height:1.5;max-width:60ch}
+.prose{max-width:62ch}
+.prose.small{font-size:14px}
+
+/* downloads — modular grid, visible structure */
+.dl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));border-left:2px solid var(--color-divider);border-top:2px solid var(--color-divider)}
+.dl{border-right:2px solid var(--color-divider);border-bottom:2px solid var(--color-divider);padding:var(--space-4);background:var(--cv-paper);display:flex;flex-direction:column}
+.dl:hover{background:var(--cv-accent-tint)}
+.dl-k{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--cv-accent-deep)}
+.dl-t{font-family:var(--font-heading);font-weight:800;font-size:16px;margin:var(--space-1) 0 2px;line-height:1.2}
+.dl-t a{color:var(--color-text);border:0}
+.dl-t a:hover{color:var(--cv-accent-deep)}
+.dl-d{font-size:13px;color:var(--cv-muted);flex:1}
+.dl-links{margin-top:var(--space-3);display:flex;gap:var(--space-3);font-size:12.5px;font-weight:700}
+.dl-links a{border:0;color:var(--cv-accent-deep)}
+.dl-links a:hover{text-decoration:underline}
+.dl-note{font-size:12.5px;font-weight:600;color:var(--cv-accent-deep);margin-top:var(--space-2)}
+.dl-grid-feature{grid-template-columns:1fr}
+.dl-grid-feature .dl{padding:var(--space-6)}
+.dl-grid-feature .dl-t{font-size:22px}
+.dl-grid-feature .dl-d{font-size:14.5px;max-width:52ch}
+.block-sub{font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--cv-muted);margin:var(--space-6) 0 var(--space-3)}
+.collab{margin:var(--space-6) 0 0;padding-top:var(--space-4);border-top:1px solid var(--cv-hair);font-size:14.5px}
+
+/* private CV library */
+.hub-row{display:flex;justify-content:space-between;align-items:flex-end;gap:var(--space-4);padding:var(--space-3) 0;border-bottom:1px solid var(--cv-hair)}
+.hub-row:last-child{border-bottom:0}
+.hub-main{min-width:0}
+.hub-t{font-family:var(--font-heading);font-weight:800;font-size:17px;margin:2px 0}
+.hub-actions{display:flex;gap:var(--space-2);flex:none}
+.hub-actions .btn{font-size:12.5px;padding:6px 14px}
+@media (max-width:640px){
+  .hub-row{flex-direction:column;align-items:flex-start}
+}
+
+/* projects */
+.projects{display:grid;gap:var(--space-8)}
+.project{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:var(--space-6);align-items:start}
+.project h3{font-size:22px;margin:0}
+.p-meta{font-size:13px;color:var(--cv-muted);margin:var(--space-1) 0 var(--space-2)}
+.stat-row{display:flex;flex-wrap:wrap;gap:var(--space-1);margin-top:var(--space-3)}
+.shot{position:relative;aspect-ratio:16/10;background:var(--color-surface);border:1px solid var(--cv-hair);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.shot img{width:100%;height:100%;object-fit:cover}
+.shot-stack{display:grid;gap:var(--space-2)}
+.project.no-shots{grid-template-columns:minmax(0,1fr)}
+.header-grid.no-portrait{grid-template-columns:minmax(0,1fr)}
+
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--space-6);margin:0}
+.skills-grid dt{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--cv-accent-deep);margin-bottom:var(--space-1)}
+.skills-grid dd{margin:0;font-size:14px}
+
+.eduline{display:flex;justify-content:space-between;gap:var(--space-4);align-items:baseline;padding:var(--space-2) 0;border-bottom:1px solid var(--cv-hair)}
+.eduline:last-child{border-bottom:0}
+.e-main{font-weight:600}
+.e-meta{font-size:13px;color:var(--cv-muted);white-space:nowrap}
+
+.site-footer{max-width:var(--maxw);margin:0 auto;padding:var(--space-6) var(--space-6) 60px;font-size:13px;color:var(--cv-muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-2)}
+.site-footer a{color:var(--cv-muted);border:0}
+.site-footer a:hover{color:var(--cv-accent)}
+
+@media (max-width:640px){
+  .sheet{padding:var(--space-8) var(--space-6)}
+  .project{grid-template-columns:1fr}
+  .entry-head{flex-direction:column;gap:0}
+  .entry-meta{text-align:left}
+  .site-name{font-size:32px}
+  .doc-name{font-size:26px}
+}
+
+/* ─────────────────────── PRINT ─────────────────────── */
+@media print{
+  @page{size:Letter;margin:0.5in 0.6in}
+  html,body{background:#fff}
+  .toolbar,.no-print{display:none !important}
+  .sheet-wrap{padding:0}
+  .sheet{max-width:none;margin:0;padding:0;font-size:10.2pt;line-height:1.36}
+  .doc-name{font-size:20pt}
+  .doc-tagline{font-size:10.5pt}
+  .doc-contact{font-size:8.4pt}
+  .doc-summary{font-size:9.6pt;margin-bottom:14pt}
+  .section{margin-bottom:12pt}
+  .section>h2{font-size:8.2pt;margin-bottom:7pt;padding-bottom:3pt}
+  .entry{margin-bottom:9pt}
+  .entry-role{font-size:10.2pt}
+  .entry ul{font-size:9.2pt}
+  .entry-meta,.entry-sub,.kv{font-size:8.6pt}
+  .kv{font-size:9.2pt}
+  a{color:var(--color-text);border:0}
+  .tag{font-size:8pt}
+}
+
+/* ── narrow-width robustness ──
+   Full URLs are kept visible by request, so they must be allowed to break;
+   without this they overflow horizontally on phones. */
+.entry-sub a,.doc-contact,.site-contact,.p-meta,.email-body{overflow-wrap:anywhere}
+.toolbar{flex-wrap:wrap}
+.eduline{flex-wrap:wrap}
+.kv dd{min-width:0}
+
+/* ── portrait + career note + email template (added in review) ── */
+.header-grid{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:var(--space-6);align-items:start}
+.portrait{aspect-ratio:1;background:var(--color-surface);border:1px solid var(--cv-hair);overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.career-note{margin:var(--space-4) 0 0;padding-top:var(--space-3);border-top:1px solid var(--cv-hair);font-size:12.5px;color:var(--cv-muted)}
+.email-subject{font-weight:600;padding:var(--space-3);background:var(--color-neutral-100);border:1px solid var(--cv-hair);margin:0}
+.email-body{font-size:14.5px;line-height:1.6;max-width:64ch}
+.email-body p{margin:0 0 var(--space-3)}
+.email-body code{background:var(--cv-accent-tint);padding:1px 5px;font-size:.92em}
+@media (max-width:640px){
+  .header-grid{grid-template-columns:1fr}
+  .portrait{width:120px}
+}
+@media print{
+  .career-note{font-size:8.4pt;margin-top:12pt;padding-top:6pt}
+  .email-subject{font-size:9.6pt}
+  .email-body{font-size:9.6pt}
+}

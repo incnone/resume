@@ -1,0 +1,3 @@
+name,meta,body,tags,link,link_label,images
+Project One,"Context · Stack · Year","Two or three sentences on what it is, what you specifically built, and why it was hard. Write it so a non-specialist grasps the shape and a specialist sees the substance.",First fact | Second fact | Third fact,https://example.com/project-one,View project →,assets/img/project-1.jpg
+Project Two,"Context · Stack · Year","Same again. Two or three projects is usually right — a long list reads as a portfolio dump rather than a selection.",First fact | Second fact,https://github.com/yourhandle/project-two,View on GitHub →,assets/img/project-2.jpg

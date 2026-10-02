@@ -1,0 +1,7 @@
+field,value
+subject,Puzzle-game programmer (Bean and Nothingness) — open to collaboration
+body_1,"Hi {{NAME}},"
+body_2,"I co-created <em>Bean and Nothingness</em>, a logic-puzzle game that shipped on Steam in 2021 and sits at 98% positive across 198 reviews. I was co-lead programmer on it — C++/SDL/OpenGL, including the replay and undo system and a GUI level editor we shipped through Steam Workshop — and lead puzzle designer, writing 100+ of its puzzles and editing all ~200."
+body_3,"I am reaching out because {{WHY THIS STUDIO — one specific, honest sentence about their game}}. If you are looking for another pair of hands on puzzle logic, tools, or engine work, I would be glad to talk. I am also happy to just trade notes on puzzle design."
+body_4,A short CV is here: {{LINK}}. The game is at {{STEAM LINK}}.
+body_5,"Thanks for reading,<br>Jordan Watkins"

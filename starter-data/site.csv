@@ -1,0 +1,13 @@
+key,value
+about_lede,"One or two sentences that say who you are and name your single strongest credential. Lead with the thing a stranger would find most impressive, and make it concrete."
+about_body,"A second paragraph in your own voice: what kind of problems you like, what connects your work, and what you are looking for now. Keep it honest and specific rather than aspirational."
+teaching,"Optional. If you teach, describe how you approach it. If you do not, remove 'teaching' from section_order below and delete this row's value."
+career_note,"Optional one-line note explaining a gap or transition, shown small at the bottom of each CV. Delete the value to hide it everywhere."
+section_order,about | education | skills | projects | teaching | cv
+skills,"Languages :: List them, most fluent first | Tools :: Frameworks, platforms, systems | Domain :: Your field's substance | Practice :: How you work — architecture, leadership, research"
+education,"Ph.D. in Your Field — University :: 2020 | B.A. in Your Field — College :: 2014"
+education_links,"Optional links shown under Education, e.g. Publisher :: https://example.com/paper — delete the value to hide the line"
+tagline,"One line under your name on the site: what you do, in the terms you want to be found by."
+title_suffix,Your Field &amp; Specialty
+meta_description,"Shown in search results and link previews. Two sentences, your strongest credential first."
+og_description,"Shorter version for social link previews."

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jordan Watkins, PhD — Mathematician &amp; Software Engineer</title>
+<meta name="description" content="Jordan Watkins — PhD mathematician and software engineer. Shipped Bean and Nothingness (98% positive on Steam); built a Bayesian rating system; published in Geometriae Dedicata.">
+<meta property="og:title" content="Jordan Watkins, PhD — Mathematician &amp; Software Engineer">
+<meta property="og:description" content="PhD mathematician and software engineer. Shipped a 98%-positive Steam puzzle game; builds Bayesian models.">
+<meta property="og:type" content="profile">
+<link rel="stylesheet" href="assets/css/modernist.css">
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-grid">
+    <div>
+      <h1 class="site-name">Jordan Watkins, <span style="color:var(--cv-accent-deep)">PhD</span></h1>
+      <p class="site-tagline">Mathematician and software engineer — differential geometry, C++ game systems, and Bayesian modeling.</p>
+      <div class="site-contact">
+        <a href="mailto:incohatus.none@gmail.com">incohatus.none@gmail.com</a>
+        <a href="https://github.com/incnone">github.com/incnone</a>
+        <a href="https://www.linkedin.com/in/jordan-watkins-3619b6244">LinkedIn</a>
+        <span>Charlottesville, VA · eager to relocate (US / Canada)</span>
+      </div>
+      <p class="header-jump"><a href="#cv">Curriculum vitae ↓</a></p>
+    </div>
+    <div class="portrait grayscale"><img src="assets/img/portrait.jpg" alt="Jordan Watkins, PhD"></div>
+  </div>
+</header>
+<div class="rule-strong"></div>
+
+<main class="site-main">
+
+  <section class="block" id="about">
+    <h2>About</h2>
+    <p class="lede">I earned a PhD in differential geometry at the University of Michigan, where I taught calculus and published my thesis work on rank rigidity in <em>Geometriae Dedicata</em>. Since then I co-created and shipped <a href="https://store.steampowered.com/app/1706090/Bean_and_Nothingness/">Bean&nbsp;and&nbsp;Nothingness</a>, a logic-puzzle game rated 98% positive on Steam, and spent a decade building the rating models and services that run a competitive gaming league.</p>
+    <p class="prose" style="margin-top:16px">I like reasoning carefully about hard, well-defined problems — a theorem, a replay system, a rating model. What connects my work is wanting to know exactly why something is true, and being willing to derive it by hand to find out. I am looking for work in higher-ed teaching, game programming, or quantitative and machine-learning engineering, and I am open to relocation across the US and Canada, including internships.</p>
+  </section>
+
+  <section class="block" id="education">
+    <h2>Education &amp; publication</h2>
+    <div class="eduline"><span class="e-main">Ph.D. in Mathematics — University of Michigan</span><span class="e-meta">2013</span></div>
+    <div class="eduline"><span class="e-main">B.A. in Mathematics &amp; Physics — Knox College · <span class="muted">Valedictorian</span></span><span class="e-meta">2007</span></div>
+    <div class="eduline"><span class="e-main">“The Higher Rank Rigidity Theorem for Manifolds With No Focal Points,” <em>Geometriae Dedicata</em> 164</span><span class="e-meta">2012</span></div>
+    <div class="eduline"><span class="e-main">Mathematical Physics Seminar, University of Virginia — <span class="muted">regular participant</span></span><span class="e-meta">2024–present</span></div>
+    <p class="small" style="margin-top:12px"><a href="https://link.springer.com/article/10.1007/s10711-012-9776-3">Springer</a> · <a href="https://arxiv.org/abs/1111.5428">arXiv preprint</a></p>
+  </section>
+
+  <section class="block" id="skills">
+    <h2>Skills</h2>
+    <dl class="skills-grid">
+      <div><dt>Languages</dt><dd>C++, Python, SQL</dd></div>
+      <div><dt>Systems &amp; tools</dt><dd>SDL, OpenGL, asyncio, discord.py, MySQL, PuLP, Git</dd></div>
+      <div><dt>Mathematics</dt><dd>Differential geometry, Bayesian modeling, optimization, information theory</dd></div>
+      <div><dt>Practice</dt><dd>Engine and service architecture, tooling, long-term maintenance, community leadership</dd></div>
+    </dl>
+  </section>
+
+  <section class="block" id="projects">
+    <h2>Selected projects</h2>
+    <div class="projects">
+      <article class="project">
+        <div class="p-body">
+          <h3>Bean and Nothingness</h3>
+          <div class="p-meta">RBOR Games · C++ / SDL / OpenGL · shipped Dec 2021</div>
+          <p class="prose small">A tile-based logic-puzzle game. As co-lead programmer I built the replay / undo / state-saving system, a GUI level editor shipped publicly via Steam Workshop, and a custom sound mixer, and contributed across the core game loop and entity logic. As lead puzzle designer I created 100+ and edited all ~200 puzzles.</p>
+          <div class="stat-row"><span class="tag">98% positive · 198 reviews</span><span class="tag">180+ puzzles</span><span class="tag">Steam Workshop</span></div>
+          <p class="small" style="margin-top:12px"><a href="https://store.steampowered.com/app/1706090/Bean_and_Nothingness/">View on Steam →</a></p>
+        </div>
+        <div class="shot-stack">
+          <div class="shot grayscale"><img src="assets/img/bean-and-nothingness-1.jpg" alt="Bean and Nothingness screenshot"></div>
+          <div class="shot grayscale"><img src="assets/img/bean-and-nothingness-2.jpg" alt="Bean and Nothingness screenshot"></div>
+        </div>
+      </article>
+      <article class="project">
+        <div class="p-body">
+          <h3>CoNDOR Rating &amp; Matchmaking</h3>
+          <div class="p-meta">Open source · Python / C++ / MySQL / PuLP · multiple seasons through 2022</div>
+          <p class="prose small">A Bayesian rating and matchmaking system for a multi-league competitive season, rebuilt and refined over several seasons. I wrote a custom paired-comparison model — Gaussian priors plus binomial match evidence, fit by MAP estimation with hand-derived gradients and a hand-written optimizer — chose its prior variance by maximizing likelihood on held-out matches from an earlier season, and — judging normal tails too thin for real performance — gave it a heavier-tailed link function whose tail weight is fit to past results. Series forecasts account for correlated rating uncertainty, which meant patching a C++ Bayesian Elo engine to expose its covariance matrix. Weekly pairings are solved as an integer program that maximizes the entropy of the predicted result, so every match is as informative as possible.</p>
+          <div class="stat-row"><span class="tag">Bayesian MAP</span><span class="tag">Held-out model selection</span><span class="tag">Integer programming</span><span class="tag">Information-theoretic objective</span></div>
+          <p class="small" style="margin-top:12px"><a href="https://github.com/incnone/condor_ratings">View on GitHub →</a></p>
+        </div>
+        <div class="shot-stack">
+          <div class="shot grayscale"><img src="assets/img/condor-ratings-1.jpg" alt="CoNDOR Rating &amp; Matchmaking screenshot"></div>
+        </div>
+      </article>
+      <article class="project">
+        <div class="p-body">
+          <h3>Necrobot</h3>
+          <div class="p-meta">Open source · Async Python / MySQL / Google Sheets · 2015–present</div>
+          <p class="prose small">Two production Discord bots — race management and full league-season administration for <em>Crypt of the NecroDancer</em> — built from one layered codebase of roughly 150 modules across 16 packages with a documented, acyclic dependency order. Async Python over MySQL, with an internal command framework, a table-mapped object layer, Google Sheets integration for standings, timezone-aware scheduling, and TrueSkill-based ratings. In continuous community use for over a decade.</p>
+          <div class="stat-row"><span class="tag">10+ years in continuous use</span><span class="tag">Two bots, one codebase</span><span class="tag">~150 modules / 16 packages</span><span class="tag">TrueSkill ratings</span></div>
+          <p class="small" style="margin-top:12px"><a href="https://github.com/incnone/necrobot">View on GitHub →</a></p>
+        </div>
+        <div class="shot-stack">
+          <div class="shot grayscale"><img src="assets/img/necrobot-1.jpg" alt="Necrobot screenshot"></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="teaching">
+    <h2>On teaching</h2>
+    <p class="prose">I taught calculus and assisted differential equations at Michigan, and I have tutored across topology, abstract algebra, differential equations, statistics, electricity &amp; magnetism, and C++. My aim is always the same: get the student to the point where the next step feels inevitable rather than memorized. I care most about building the mental picture behind a definition — the geometry under an equation — because that is what survives the exam and transfers to the next problem.</p>
+  </section>
+
+  <section class="block" id="cv">
+    <h2>Curriculum vitae</h2>
+    <div class="dl-grid dl-grid-feature">
+        <div class="dl">
+          <div class="dl-k">Complete record</div>
+          <div class="dl-t"><a href="cv/full.html">Full CV</a></div>
+          <div class="dl-d">Everything: research, publication, software, teaching, and service.</div>
+          <div class="dl-links"><a href="cv/full.html">Read the full CV →</a></div>
+        </div>
+    </div>
+    <h3 class="block-sub">Specific skillsets</h3>
+    <div class="dl-grid">
+        <div class="dl">
+          <div class="dl-k">Teaching &amp; academia</div>
+          <div class="dl-t"><a href="cv/academia.html">Teaching &amp; academia: math, physics, CS</a></div>
+          <div class="dl-d">University instruction, tutoring breadth, and a published research record.</div>
+          <div class="dl-links"><a href="cv/academia.html">Read the CV →</a></div>
+        </div>
+        <div class="dl">
+          <div class="dl-k">Quantitative</div>
+          <div class="dl-t"><a href="cv/quantitative.html">Quantitative: ML, AI, quant</a></div>
+          <div class="dl-d">Bayesian modeling, optimization, and PhD-level mathematics.</div>
+          <div class="dl-links"><a href="cv/quantitative.html">Read the CV →</a></div>
+        </div>
+        <div class="dl">
+          <div class="dl-k">Game development</div>
+          <div class="dl-t"><a href="cv/gamedev.html">Full stack game programming: engine, tools, gameplay, PM</a></div>
+          <div class="dl-d">Shipped C++ engine and tools, gameplay systems, and project leadership.</div>
+          <div class="dl-note">Specializing in challenging indie puzzle-games.</div>
+          <div class="dl-links"><a href="cv/gamedev.html">Read the CV →</a></div>
+        </div>
+    </div>
+    <p class="collab">Open to collaboration on puzzle-game dev — <a href="mailto:incohatus.none@gmail.com">reach out to collaborate</a>.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>Jordan Watkins, PhD · Charlottesville, VA</span>
+  <span><a href="https://github.com/incnone">GitHub</a> · <a href="https://www.linkedin.com/in/jordan-watkins-3619b6244">LinkedIn</a> · <a href="mailto:incohatus.none@gmail.com">Email</a></span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+title: "Jordan Watkins, PhD"
+description: "Mathematician and software engineer — CV and print-ready résumé versions."
+author: "Jordan Watkins"
+# Static site: pages are plain HTML and are served verbatim by GitHub Pages.
+# 'url'/'baseurl' left blank because every internal link is relative (baseurl-safe).
+url: ""
+baseurl: ""
+exclude:
+  - README.md
+  - cv-source.md
+  - scripts/
+  - starter-data/
+  - TEMPLATE.md
+  - package.json
+  - package-lock.json
+  - node_modules/
+  - Gemfile
+  - Gemfile.lock
