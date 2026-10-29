@@ -52,6 +52,7 @@ li::marker{color:var(--cv-faint)}
 }
 .entry{margin-bottom:var(--space-4);break-inside:avoid}
 .entry:last-child{margin-bottom:0}
+.entry-line{margin-bottom:var(--space-1)}
 .entry-head{display:flex;justify-content:space-between;gap:var(--space-4);align-items:baseline}
 .entry-role{font-family:var(--font-heading);font-size:15px;font-weight:800}
 .entry-org{font-weight:600;color:var(--cv-accent-deep)}
@@ -63,7 +64,7 @@ li::marker{color:var(--cv-faint)}
 .kv dt{font-family:var(--font-heading);font-weight:800}
 .kv dd{margin:0}
 
-.tag-row{display:flex;flex-wrap:wrap;gap:var(--space-1)}
+.tag-row{display:flex;flex-wrap:wrap;gap:var(--space-1);break-inside:avoid}
 .tag{font-size:11.5px;font-weight:600;color:var(--color-text);border:1px solid var(--cv-hair);padding:2px var(--space-2);background:var(--color-neutral-100)}
 
 /* ─────────────── screen-only toolbar ─────────────── */
@@ -180,6 +181,25 @@ li::marker{color:var(--cv-faint)}
   .kv{font-size:9.2pt}
   a{color:var(--color-text);border:0}
   .tag{font-size:8pt}
+  /* Keep a section heading with its first content, and never split a pill row
+     across pages — a tag row that does not fit moves whole, heading and all. */
+  .section>h2{break-after:avoid}
+  .tag-row{break-inside:avoid}
+  .entry-line{margin-bottom:2.5pt}
+
+  /* "fit: tight" in _data/versions.csv — one notch denser, to pull a short
+     trailing section back onto the preceding page. */
+  .sheet-tight{font-size:9.6pt;line-height:1.3}
+  .sheet-tight .doc-summary{font-size:9.2pt;margin-bottom:11pt}
+  .sheet-tight .section{margin-bottom:9pt}
+  .sheet-tight .section>h2{margin-bottom:5pt;padding-bottom:2.5pt}
+  .sheet-tight .entry{margin-bottom:7pt}
+  .sheet-tight .entry-role{font-size:9.6pt}
+  .sheet-tight .entry ul{font-size:8.8pt}
+  .sheet-tight .entry-meta,.sheet-tight .entry-sub{font-size:8.2pt}
+  .sheet-tight .kv{font-size:8.8pt}
+  .sheet-tight li{margin:1px 0}
+  .sheet-tight .career-note{margin-top:9pt;padding-top:5pt}
 }
 
 /* ── narrow-width robustness ──

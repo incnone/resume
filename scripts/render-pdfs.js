@@ -42,7 +42,7 @@ function serve(){
   const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
   const page = await browser.newPage();
   for (const [slug, out] of pages) {
-    await page.goto(\`http://localhost:\${PORT}/cv/\${slug}.html\`, { waitUntil: 'networkidle0' });
+    await page.goto('http://localhost:' + PORT + '/cv/' + slug + '.html', { waitUntil: 'networkidle0' });
     await page.pdf({
       path: path.join(OUT, out + '.pdf'),
       printBackground: true,

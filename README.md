@@ -39,6 +39,14 @@ if you later want Liquid templating.
 The `group` column in `versions.csv` controls visibility: `full` and `skillset`
 appear on the public page, `private` only in the CV library.
 
+**Two knobs for print length:**
+- `fit` in `versions.csv` — leave blank for normal density, or set `tight` to
+  print that version one notch denser (smaller type, tighter sections) when a
+  short trailing section would otherwise spill onto its own page.
+- `type` in `sections.csv` — `entries-tight` renders an `entries` section as
+  single lines (role · org · date only, no detail or bullets); used for
+  Education on the game-development CV.
+
 ## Structure
 
 - `index.html` — the public one-page site (generated).

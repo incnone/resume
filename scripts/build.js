@@ -4,7 +4,7 @@
 
 function esc(s) { return String(s); }
 
-function entryHtml(b) {
+function entryHtml(b, tight) {
   if (!b) return '';
   var head = '<div class="entry-head"><div><span class="entry-role">' + b.role + '</span>' +
     (b.org ? ' <span class="entry-org">· ' + b.org + '</span>' : '') + '</div>' +
@@ -13,13 +13,15 @@ function entryHtml(b) {
   var sub = b.sub ? '<div class="entry-sub">' + b.sub + '</div>' : '';
   var bullets = (b.bullets && b.bullets.length)
     ? '<ul>' + b.bullets.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul>' : '';
+  if (tight) return '<div class="entry entry-line">' + head + '</div>';
   return '<div class="entry">' + head + link + sub + bullets + '</div>';
 }
 
 function sectionHtml(sec, data) {
   var inner = '';
-  if (sec.type === 'entries') {
-    inner = sec.blocks.map(function (id) { return entryHtml(data.blocks[id]); }).join('');
+  if (sec.type === 'entries' || sec.type === 'entries-tight') {
+    var tight = sec.type === 'entries-tight';
+    inner = sec.blocks.map(function (id) { return entryHtml(data.blocks[id], tight); }).join('');
   } else if (sec.type === 'kv') {
     inner = '<div class="kv">' + sec.rows.map(function (r) {
       return '<dt>' + r[0] + '</dt><dd>' + r[1] + '</dd>';
@@ -64,7 +66,7 @@ function cvPage(v, data) {
     '</head>\n<body>\n' +
     '<div class="toolbar no-print">\n  <a href="../index.html">← All versions</a>\n' +
     '  <button class="btn btn-primary" onclick="window.print()">Print / Save as PDF</button>\n</div>\n' +
-    '<div class="sheet-wrap">\n<article class="sheet">\n' +
+    '<div class="sheet-wrap">\n<article class="sheet' + (v.fit === 'tight' ? ' sheet-tight' : '') + '">\n' +
     '  <header class="doc-head">\n    <h1 class="doc-name">' + name + '</h1>\n' +
     '    <p class="doc-tagline">' + v.tagline + '</p>\n' +
     '    <div class="doc-contact">' + contactHtml(p) + '</div>\n  </header>\n' +
@@ -345,7 +347,7 @@ function assemble(t) {
     var v = {
       slug: r.slug, pdf: r.pdf, group: r.group, kicker: r.kicker,
       cardTitle: r.card_title, cardBlurb: r.card_blurb, tagline: r.tagline,
-      careerNote: r.career_note === 'yes', sections: []
+      careerNote: r.career_note === 'yes', fit: r.fit || '', sections: []
     };
     if (r.card_note) v.cardNote = r.card_note;
     if (r.name) v.name = r.name;
@@ -360,7 +362,7 @@ function assemble(t) {
     var v = bySlug[r.version];
     if (!v) return;
     var s = { title: r.title, type: r.type };
-    if (r.type === 'entries') s.blocks = splitList(r.content);
+    if (r.type === 'entries' || r.type === 'entries-tight') s.blocks = splitList(r.content);
     else if (r.type === 'kv') s.rows = splitPairs(r.content);
     else if (r.type === 'tags') s.tags = splitList(r.content);
     else if (r.type === 'list') s.items = splitList(r.content);

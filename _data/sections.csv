@@ -25,7 +25,7 @@ quantitative,Continued education in ML &amp; data,entries,seminar | erdos,"Self-
 gamedev,Game development experience,entries,game.pm,
 gamedev,Systems &amp; backend experience,entries,necrobot | ratings.short,
 gamedev,Skills,kv,"Languages :: C++ (primary), Python, SQL | Engine &amp; graphics :: SDL, OpenGL, custom audio mixing, replay/state systems, entity logic, core game loop | Tools :: GUI level editor authoring, Steam Workshop, Git, Visual Studio | Design :: Puzzle design and difficulty progression across a full commercial game | Project leadership :: Scoping and sequencing content, coordinating distributed remote teams, driving releases, long-term maintenance | Backend :: Async Python services, MySQL, rating and matchmaking algorithms | Foundations :: PhD mathematics — geometry, linear algebra, probability",
-gamedev,Education,entries,phd | ba,
+gamedev,Education,entries-tight,phd | ba,
 phd,Education,entries,phd | ba,
 phd,Publications,entries,publication,
 phd,Research,entries,thesis,
