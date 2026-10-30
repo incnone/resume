@@ -228,3 +228,6 @@ li::marker{color:var(--cv-faint)}
   .email-subject{font-size:9.6pt}
   .email-body{font-size:9.6pt}
 }
+
+/* Project screenshots in full color; portrait stays black and white. */
+.shot.grayscale{filter:none}
