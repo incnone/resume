@@ -4,6 +4,8 @@ A small static site (GitHub Pages / Jekyll compatible) presenting Jordan Watkins
 as a one-page professional webpage plus seven print-ready, role-targeted versions
 and a cold-outreach email template.
 
+Development work on this website was done primarily by Claude.
+
 ## Content lives in _data/*.csv
 
 Eight small CSV tables are the single source of truth. Each opens in Excel,
