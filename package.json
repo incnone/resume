@@ -8,6 +8,6 @@
     "reset-content": "node scripts/reset-content.js"
   },
   "devDependencies": {
-    "puppeteer": "^23.0.0"
+    "puppeteer": "^25.16.0"
   }
 }

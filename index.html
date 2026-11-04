@@ -6,7 +6,7 @@
 <title>Jordan Watkins, PhD — Mathematician &amp; Software Engineer</title>
 <meta name="description" content="Jordan Watkins — PhD mathematician and software engineer. Shipped Bean and Nothingness (98% positive on Steam); built a Bayesian rating system; published in Geometriae Dedicata.">
 <meta property="og:title" content="Jordan Watkins, PhD — Mathematician &amp; Software Engineer">
-<meta property="og:description" content="PhD mathematician and software engineer. Shipped a 98%-positive Steam puzzle game; builds Bayesian models.">
+<meta property="og:description" content="PhD mathematician, software engineer, game designer. Shipped a 98%-positive Steam puzzle game; builds Bayesian models.">
 <meta property="og:type" content="profile">
 <link rel="stylesheet" href="assets/css/modernist.css">
 <link rel="stylesheet" href="assets/css/main.css">
@@ -17,7 +17,7 @@
   <div class="header-grid">
     <div>
       <h1 class="site-name">Jordan Watkins, <span style="color:var(--cv-accent-deep)">PhD</span></h1>
-      <p class="site-tagline">Mathematician and software engineer — differential geometry, C++ game systems, and Bayesian modeling.</p>
+      <p class="site-tagline">Mathematician and software engineer — differential geometry, C++ game systems, Bayesian modeling.</p>
       <div class="site-contact">
         <a href="mailto:incohatus.none@gmail.com">incohatus.none@gmail.com</a>
         <a href="https://github.com/incnone">github.com/incnone</a>
@@ -35,8 +35,8 @@
 
   <section class="block" id="about">
     <h2>About</h2>
-    <p class="lede">I earned a PhD in differential geometry at the University of Michigan, where I taught calculus and published my thesis work on rank rigidity in <em>Geometriae Dedicata</em>. Since then I co-created and shipped <a href="https://store.steampowered.com/app/1706090/Bean_and_Nothingness/">Bean&nbsp;and&nbsp;Nothingness</a>, a logic-puzzle game rated 98% positive on Steam, and spent a decade building the rating models and services that run a competitive gaming league.</p>
-    <p class="prose" style="margin-top:16px">I like reasoning carefully about hard, well-defined problems — a theorem, a replay system, a rating model. What connects my work is wanting to know exactly why something is true, and being willing to derive it by hand to find out. I am looking for work in higher-ed teaching, game programming, or quantitative and machine-learning engineering, and I am open to relocation across the US and Canada, including internships.</p>
+    <p class="lede">I earned a PhD in differential geometry at the University of Michigan, where I taught calculus and published my thesis work on rank rigidity in <em>Geometriae Dedicata</em>. Since then I co-created and shipped <a href="https://store.steampowered.com/app/1706090/Bean_and_Nothingness/">Bean&nbsp;and&nbsp;Nothingness</a>, a logic-puzzle game rated 98% positive on Steam, and built services and rating models that have run a competitive gaming league for a decade.</p>
+    <p class="prose" style="margin-top:16px">I like reasoning carefully about hard, well-defined problems, particularly those that involve both working within and refining mathematical models of real-world phenomena. I am looking for work in quantitative and machine-learning engineering, game design and programming, and higher-ed teaching. I am open to relocation across the US and Canada, including internships.</p>
   </section>
 
   <section class="block" id="education">
@@ -53,8 +53,8 @@
     <dl class="skills-grid">
       <div><dt>Languages</dt><dd>C++, Python, SQL</dd></div>
       <div><dt>Systems &amp; tools</dt><dd>SDL, OpenGL, asyncio, discord.py, MySQL, PuLP, Git</dd></div>
-      <div><dt>Mathematics</dt><dd>Differential geometry, Bayesian modeling, optimization, information theory</dd></div>
-      <div><dt>Practice</dt><dd>Engine and service architecture, tooling, long-term maintenance, community leadership</dd></div>
+      <div><dt>Mathematics</dt><dd>Differential geometry, statistics &amp information theory, category theory</dd></div>
+      <div><dt>Practice</dt><dd>Engine and service architecture, tooling, long-term maintenance</dd></div>
     </dl>
   </section>
 
@@ -66,7 +66,7 @@
           <h3>Bean and Nothingness</h3>
           <div class="p-meta">RBOR Games · C++ / SDL / OpenGL · shipped Dec 2021</div>
           <p class="prose small">A tile-based logic-puzzle game. As co-lead programmer I built the replay / undo / state-saving system, a GUI level editor shipped publicly via Steam Workshop, and a custom sound mixer, and contributed across the core game loop and entity logic. As lead puzzle designer I created 100+ and edited all ~200 puzzles.</p>
-          <div class="stat-row"><span class="tag">98% positive · 198 reviews</span><span class="tag">180+ puzzles</span><span class="tag">Steam Workshop</span></div>
+          <div class="stat-row"><span class="tag">98% positive · 216 reviews</span><span class="tag">180+ puzzles</span><span class="tag">Steam Workshop</span></div>
           <p class="small" style="margin-top:12px"><a href="https://store.steampowered.com/app/1706090/Bean_and_Nothingness/">View on Steam →</a></p>
         </div>
         <div class="shot-stack">
@@ -79,7 +79,7 @@
           <h3>CoNDOR Rating &amp; Matchmaking</h3>
           <div class="p-meta">Open source · Python / C++ / MySQL / PuLP · multiple seasons through 2022</div>
           <p class="prose small">A Bayesian rating and matchmaking system for a multi-league competitive season, rebuilt and refined over several seasons. I wrote a custom paired-comparison model — Gaussian priors plus binomial match evidence, fit by MAP estimation with hand-derived gradients and a hand-written optimizer — chose its prior variance by maximizing likelihood on held-out matches from an earlier season, and — judging normal tails too thin for real performance — gave it a heavier-tailed link function whose tail weight is fit to past results. Series forecasts account for correlated rating uncertainty, which meant patching a C++ Bayesian Elo engine to expose its covariance matrix. Weekly pairings are solved as an integer program that maximizes the entropy of the predicted result, so every match is as informative as possible.</p>
-          <div class="stat-row"><span class="tag">Bayesian MAP</span><span class="tag">Held-out model selection</span><span class="tag">Integer programming</span><span class="tag">Information-theoretic objective</span></div>
+          <div class="stat-row"><span class="tag">Bayesian MAP</span><span class="tag">Model selection</span><span class="tag">Integer programming</span></div>
           <p class="small" style="margin-top:12px"><a href="https://github.com/incnone/condor_ratings">View on GitHub →</a></p>
         </div>
         <div class="shot-stack">
@@ -103,7 +103,7 @@
 
   <section class="block" id="teaching">
     <h2>On teaching</h2>
-    <p class="prose">I taught calculus and assisted differential equations at Michigan, and I have tutored across topology, abstract algebra, differential equations, statistics, electricity &amp; magnetism, and C++. My aim is always the same: get the student to the point where the next step feels inevitable rather than memorized. I care most about building the mental picture behind a definition — the geometry under an equation — because that is what survives the exam and transfers to the next problem.</p>
+    <p class="prose">I taught calculus and assisted differential equations at Michigan, and I have tutored across topology, abstract algebra, differential equations, statistics, electromagnetism, and C++. I have a listening-focused tutoring style that tries to iteratively refine the student's current model, through a mix of general conceptual discussion and many worked exercises.</p>
   </section>
 
   <section class="block" id="cv">
