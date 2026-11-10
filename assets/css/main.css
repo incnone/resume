@@ -92,8 +92,8 @@ li::marker{color:var(--cv-faint)}
 .block{padding:var(--space-8) 0;border-bottom:1px solid var(--cv-hair)}
 .block:last-child{border-bottom:0}
 .block > h2{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin:0 0 var(--space-4)}
-.lede{font-size:18px;line-height:1.5;max-width:60ch}
-.prose{max-width:62ch}
+.lede{font-size:18px;line-height:1.5;}
+.prose{}
 .prose.small{font-size:14px}
 
 /* downloads — modular grid, visible structure */
