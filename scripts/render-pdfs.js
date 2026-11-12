@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 const http = require('http');
-const puppeteer = require('puppeteer');
+// puppeteer v25+ is ESM-only, so it must be loaded with import() rather than require().
 
 const ROOT = process.cwd();
 const OUT = path.join(ROOT, 'assets', 'pdfs');
@@ -36,6 +36,7 @@ function serve(){
 }
 
 (async () => {
+  const { default: puppeteer } = await import('puppeteer');
   fs.mkdirSync(OUT, { recursive: true });
   const server = serve();
   await new Promise(r => server.listen(PORT, r));

@@ -3,7 +3,7 @@
 ## One-time installs
 
 1. **Git** — https://git-scm.com/download/win (accept the defaults).
-2. **Node.js LTS** — https://nodejs.org (accept the defaults).
+2. **Node.js LTS, version 22.12 or newer** — https://nodejs.org (accept the defaults). Older versions (e.g. 18 or 20) can't run the PDF step.
 3. Open **PowerShell** and check that both installed:
    ```
    git --version
