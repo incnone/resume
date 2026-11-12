@@ -42,7 +42,7 @@ function contactHtml(p) {
     p.phone,
     '<a href="mailto:' + p.email + '">' + p.email + '</a>',
     '<a href="' + p.github + '">' + p.github.replace(/^https?:\/\//, '') + '</a>',
-    '<a href="' + p.linkedin + '">LinkedIn</a>',
+    '<a href="' + p.linkedin + '">' + p.linkedin.replace(/^https?:\/\//, '') + '</a>',
     p.location + ' · relocating'
   ].join('<span class="sep">·</span>');
 }
@@ -179,7 +179,7 @@ function indexPage(data) {
     '      <div class="site-contact">\n' +
     '        <a href="mailto:' + p.email + '">' + p.email + '</a>\n' +
     '        <a href="' + p.github + '">' + p.github.replace(/^https?:\/\//, '') + '</a>\n' +
-    '        <a href="' + p.linkedin + '">LinkedIn</a>\n' +
+    '        <a href="' + p.linkedin + '">' + p.linkedin.replace(/^https?:\/\//, '') + '</a>\n' +
     '        <span>' + p.location + ' · ' + p.relocation + '</span>\n' +
     '      </div>\n' +
     '      <p class="header-jump"><a href="#cv">Curriculum vitae ↓</a></p>\n' +
@@ -191,7 +191,7 @@ function indexPage(data) {
     '<main class="site-main">\n\n' + body + '\n\n</main>\n\n' +
     '<footer class="site-footer">\n' +
     '  <span>' + p.name + ' · ' + p.location + '</span>\n' +
-    '  <span><a href="' + p.github + '">GitHub</a> · <a href="' + p.linkedin + '">LinkedIn</a> · <a href="mailto:' + p.email + '">Email</a></span>\n' +
+    '  <span><a href="' + p.github + '">GitHub</a> · <a href="' + p.linkedin + '">' + p.linkedin.replace(/^https?:\/\//, '') + '</a> · <a href="mailto:' + p.email + '">Email</a></span>\n' +
     '</footer>\n\n</body>\n</html>\n';
 }
 
